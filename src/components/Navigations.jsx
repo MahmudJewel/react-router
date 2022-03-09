@@ -1,17 +1,24 @@
 import { Button, Navbar, Container, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import "../assets/navigations.css"
+
 
 const Navigation = () => {
   return (
     <div>
       <Navbar bg="light" variant="light" className='shadow'>
         <Container>
-          <Navbar.Brand ><Link to="/">Navbar</Link></Navbar.Brand>
+          <Navbar.Brand >
+            <NavLink to="/" activeClassName="active">Navbar</NavLink>
+          </Navbar.Brand>
+          
+          
           <Nav className="me-auto">
-          <Nav.Link ><Link to="/1" >Page-1</Link></Nav.Link >
-            <Nav.Link ><Link to="/2">Page-2</Link></Nav.Link>
-            <Nav.Link><Link to="/un-1">Page-3</Link></Nav.Link>
-            <Nav.Link ><Link to="/4">Page-4</Link></Nav.Link>
+          <Nav.Link activeClassName="active">
+            <NavLink to="/1" activeClassName="active">Page-1</NavLink></Nav.Link >
+            <Nav.Link ><NavLink to="/2" activeClassName="active">Page-2</NavLink></Nav.Link>
+            <Nav.Link><NavLink to="/un-1" activeClassName="active">Page-3</NavLink></Nav.Link>
+            <Nav.Link ><NavLink to="/4">Page-4</NavLink></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
